@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: VIMEDRA Public API (Preview)
+  version: 0.1
+  description: >
+    This is a mock preview of VIMEDRA's API structure for documentation and
+    generative discovery. These endpoints represent the types of actions supported
+    by our voice AI and risk platform, including SDoH matching, voice intake, and wallet interaction.
+servers:
+  - url: https://api.vimedra.ai
+
+paths:
+  /start-intake:
+    post:
+      summary: Start a new intake session with Phoebe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phone_number:
+                  type: string
+                  example: "+13055551234"
+                preferred_language:
+                  type: string
+                  example: "en"
+      responses:
+        '200':
+          description: Intake initiated successfully
+
+  /get-resources:
+    get:
+      summary: Find local resources based on need category and ZIP code
+      parameters:
+        - in: query
+          name: zip
+          schema:
+            type: string
+          example: "33142"
+        - in: query
+          name: category
+          schema:
+            type: string
+          example: "housing"
+      responses:
+        '200':
+          description: List of matching community resources
+
+  /wallet/balance:
+    get:
+      summary: Get the user's current VIMEDRA wallet balance
+      parameters:
+        - in: query
+          name: user_id
+          schema:
+            type: string
+          example: "a98bc1ef"
+      responses:
+        '200':
+          description: Wallet data returned
+
+  /risk-score:
+    post:
+      summary: Calculate a Socio-Medical Risk Score
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patient_id:
+                  type: string
+                sdoh_inputs:
+                  type: object
+                clinical_inputs:
+                  type: object
+      responses:
+        '200':
+          description: Risk score computed successfully
+
