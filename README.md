@@ -36,7 +36,7 @@ We’re proudly part of the NVIDIA Inception Program and currently piloting with
 - Medium: [@vimedra](https://medium.com/@vimedra)
 - Twitter: [@VIMEDRA_](https://x.com/VIMEDRA_)
 - Instagram: [@vimedra](https://instagram.com/vimedra/)
-- Instagram: [@vimedra](https://instagram.com/phoebe.vimedra.ai/)
+- Instagram: [@phoebe](https://instagram.com/phoebe.vimedra.ai/)
 - LinkedIn: [@vimedra](https://www.linkedin.com/company/vimedra/)
 
 ---
